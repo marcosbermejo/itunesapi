@@ -74,7 +74,7 @@ Importing axios in `app.service.ts` is easier, and I am more used to work with p
 const response = await axios.get<ItunesResult>(url)
 ```
 
-The drawback here is it has bad testeability. In the test we should mock all axios using this:
+The drawback here is it has bad testability. In the test we should mock all axios using this:
 
 ```ts
 // ./src/test/app.service.spec.ts
