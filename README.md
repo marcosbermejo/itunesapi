@@ -114,7 +114,7 @@ Using `class-transformer` dependency is very useful to automatically transform d
 
 In this example @Expose allows me to transform the property name from `collectionName` (used internally) to `name` (used externally).
 
-Using `class-validator` is also useful for validate DTOs in the body request (for instance, POST request to create a User) like in this example:
+Using `class-validator` is also useful to validate DTOs in the body request (for instance, POST request to create a User) like in this example:
 
 ```ts
 import { IsEmail, Length } from 'class-validator'
@@ -132,7 +132,7 @@ In my opinion, usage of DTO's should stay in the controller layer. Services shou
 
 This separation of concerns enhances scalability and robustness.
 
-Finally, `app.serializer.ts` file contains the code for transforming from `Album` to `AlbumDTO`. Therefore, it can be used from any controller.
+Finally, the `app.serializer.ts` file contains the code for transforming from `Album` to `AlbumDTO`. Therefore, it can be used from any controller.
 
 ## Swagger
 
