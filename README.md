@@ -10,20 +10,20 @@ $ npm install
 ## Running the API
 
 ```bash
-$ npm start
+$ npm run start
 ```
 
 ## Test
 
 ```bash
-$ npm test
+$ npm run test
 ```
 
 # Explanations and Justifications
 
 ## Why NestJS
 
-It's the best NodeJS framework in my opinion. Great documentation, native support for Typescript, scalable and testeable.
+It's the best NodeJS framework in my opinion. Great documentation, native support for Typescript, scalable and testable.
 
 ## Main functionality
 
@@ -93,7 +93,7 @@ It can become tricky and difficult to mantain very fast.
 
 ## Usage of DTO
 
-I think it is a best practice to use Data Transfer Objects to make the communication between the backend and the frontend more escalable.
+It is highly recommended to use Data Transfer Objects to make the communication between the backend and the frontend more scalable.
 
 In this exercice I have decided to use a DTO with 2 parameters:
 
@@ -110,11 +110,11 @@ export class AlbumDto {
 }
 ```
 
-Using `class-transformer` dependency is very useful for automatically transform data from the Entity (database or iTunes API or any other source) to the DTO.
+Using `class-transformer` dependency is very useful to automatically transform data from the Entity (database or iTunes API or any other source) to the DTO.
 
 In this example @Expose allows me to transform the property name from `collectionName` (used internally) to `name` (used externally).
 
-Using `class-validator` is also useful for validate DTOs in the body request (for instance, POST request to create a User) like this example:
+Using `class-validator` is also useful for validate DTOs in the body request (for instance, POST request to create a User) like in this example:
 
 ```ts
 import { IsEmail, Length } from 'class-validator'
@@ -128,15 +128,15 @@ export class ExampleDto {
 }
 ```
 
-In my opinion, usage of DTO's should stay in the controller layer. Services should not depend on DTO's. DTO's are only intended for backend - frontend communication. It should not interfere with de domain model.
+In my opinion, usage of DTO's should stay in the controller layer. Services should not depend on DTO's. DTO's are only intended for backend - frontend communication. They should not interfere with the domain model.
 
-This separation of concerns enables escalability and robustness.
+This separation of concerns enhances scalability and robustness.
 
-Last, `app.serializer.ts` file has the code for transforming from `Album` to `AlbumDTO`. It can be used from any controller.
+Finally, `app.serializer.ts` file contains the code for transforming from `Album` to `AlbumDTO`. Therefore, it can be used from any controller.
 
 ## Swagger
 
 NestJS also makes it easy to configure Swagger endpoint. You can test it in this url: http://localhost:3000/api/
 
-It is not fully configured in this project, just initialized.
+It is not fully configured in this project yet, just initialized.
 
